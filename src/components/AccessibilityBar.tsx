@@ -3,10 +3,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/ThemeProvider";
 import { useFontSize } from "@/hooks/useFontSize";
-import { FontSizeProvider } from "@/hooks/useFontSize";
-import { Sun, Moon, Type, Contrast, Menu, X } from "lucide-react";
+import { Sun, Moon, Contrast, Menu, X } from "lucide-react";
 
-const AccessibilityControls = () => {
+export default function AccessibilityBar() {
   const { theme, setTheme } = useTheme();
   const { fontSize, setFontSize } = useFontSize();
   const [highContrast, setHighContrast] = useState(false);
@@ -25,36 +24,46 @@ const AccessibilityControls = () => {
           <div className="hidden md:flex items-center space-x-4">
             <span className="text-sm text-muted-foreground font-medium">Accessibility:</span>
             
-            <div className="flex items-center space-x-1">
+            {/* Unique Font Size Controls */}
+            <div className="flex items-center bg-background border rounded-lg p-1">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setFontSize("small")}
-                className={`h-8 px-2 ${fontSize === "small" ? "bg-primary/10" : ""}`}
+                className={`h-7 px-3 rounded-md transition-all ${
+                  fontSize === "small" 
+                    ? "bg-primary text-primary-foreground shadow-sm" 
+                    : "hover:bg-muted"
+                }`}
                 aria-label="Small font size"
               >
-                <Type className="h-3 w-3" />
-                <span className="ml-1 text-xs">A-</span>
+                <span className="text-xs font-medium">Small</span>
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setFontSize("medium")}
-                className={`h-8 px-2 ${fontSize === "medium" ? "bg-primary/10" : ""}`}
-                aria-label="Medium font size"
+                className={`h-7 px-3 rounded-md transition-all ${
+                  fontSize === "medium" 
+                    ? "bg-primary text-primary-foreground shadow-sm" 
+                    : "hover:bg-muted"
+                }`}
+                aria-label="Normal font size"
               >
-                <Type className="h-4 w-4" />
-                <span className="ml-1 text-sm">A</span>
+                <span className="text-sm font-medium">Normal</span>
               </Button>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setFontSize("large")}
-                className={`h-8 px-2 ${fontSize === "large" ? "bg-primary/10" : ""}`}
+                className={`h-7 px-3 rounded-md transition-all ${
+                  fontSize === "large" 
+                    ? "bg-primary text-primary-foreground shadow-sm" 
+                    : "hover:bg-muted"
+                }`}
                 aria-label="Large font size"
               >
-                <Type className="h-5 w-5" />
-                <span className="ml-1 text-base">A+</span>
+                <span className="text-base font-medium">Large</span>
               </Button>
             </div>
 
@@ -106,30 +115,43 @@ const AccessibilityControls = () => {
         {isExpanded && (
           <div className="md:hidden py-3 border-t">
             <div className="flex flex-wrap gap-2">
-              <div className="flex items-center space-x-1">
+              {/* Mobile Font Size Controls */}
+              <div className="flex items-center bg-background border rounded-lg p-1 w-full">
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => setFontSize("small")}
-                  className={`h-8 px-2 ${fontSize === "small" ? "bg-primary/10" : ""}`}
+                  className={`flex-1 h-8 rounded-md ${
+                    fontSize === "small" 
+                      ? "bg-primary text-primary-foreground" 
+                      : ""
+                  }`}
                 >
-                  A-
+                  Small
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => setFontSize("medium")}
-                  className={`h-8 px-2 ${fontSize === "medium" ? "bg-primary/10" : ""}`}
+                  className={`flex-1 h-8 rounded-md ${
+                    fontSize === "medium" 
+                      ? "bg-primary text-primary-foreground" 
+                      : ""
+                  }`}
                 >
-                  A
+                  Normal
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => setFontSize("large")}
-                  className={`h-8 px-2 ${fontSize === "large" ? "bg-primary/10" : ""}`}
+                  className={`flex-1 h-8 rounded-md ${
+                    fontSize === "large" 
+                      ? "bg-primary text-primary-foreground" 
+                      : ""
+                  }`}
                 >
-                  A+
+                  Large
                 </Button>
               </div>
               
@@ -157,13 +179,5 @@ const AccessibilityControls = () => {
         )}
       </div>
     </div>
-  );
-};
-
-export default function AccessibilityBar() {
-  return (
-    <FontSizeProvider>
-      <AccessibilityControls />
-    </FontSizeProvider>
   );
 }
