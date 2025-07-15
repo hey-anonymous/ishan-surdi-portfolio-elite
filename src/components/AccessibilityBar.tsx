@@ -24,7 +24,7 @@ export default function AccessibilityBar() {
           <div className="hidden md:flex items-center space-x-4">
             <span className="text-sm text-muted-foreground font-medium">Accessibility:</span>
             
-            {/* Unique Font Size Controls */}
+            {/* Font Size Controls with A-, A, A+ */}
             <div className="flex items-center bg-background border rounded-lg p-1">
               <Button
                 variant="ghost"
@@ -37,7 +37,7 @@ export default function AccessibilityBar() {
                 }`}
                 aria-label="Small font size"
               >
-                <span className="text-xs font-medium">Small</span>
+                <span className="text-xs font-medium">A-</span>
               </Button>
               <Button
                 variant="ghost"
@@ -50,7 +50,7 @@ export default function AccessibilityBar() {
                 }`}
                 aria-label="Normal font size"
               >
-                <span className="text-sm font-medium">Normal</span>
+                <span className="text-sm font-medium">A</span>
               </Button>
               <Button
                 variant="ghost"
@@ -63,7 +63,7 @@ export default function AccessibilityBar() {
                 }`}
                 aria-label="Large font size"
               >
-                <span className="text-base font-medium">Large</span>
+                <span className="text-base font-medium">A+</span>
               </Button>
             </div>
 
@@ -127,7 +127,7 @@ export default function AccessibilityBar() {
                       : ""
                   }`}
                 >
-                  Small
+                  A-
                 </Button>
                 <Button
                   variant="ghost"
@@ -139,7 +139,7 @@ export default function AccessibilityBar() {
                       : ""
                   }`}
                 >
-                  Normal
+                  A
                 </Button>
                 <Button
                   variant="ghost"
@@ -151,7 +151,7 @@ export default function AccessibilityBar() {
                       : ""
                   }`}
                 >
-                  Large
+                  A+
                 </Button>
               </div>
               
