@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BarChart3, Code2, TrendingUp, Sparkles, Zap, Target } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -14,20 +13,16 @@ export default function Index() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
-        {/* Floating Elements */}
+        {/* Static Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-2 h-2 bg-primary rounded-full animate-ping" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-40 right-20 w-3 h-3 bg-accent rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
-          <div className="absolute bottom-40 left-20 w-1.5 h-1.5 bg-primary/70 rounded-full animate-ping" style={{ animationDelay: '3s' }} />
-          
           {/* Gradient Orbs */}
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-accent/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1.5s' }} />
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-accent/10 rounded-full blur-2xl" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Enhanced Left Content */}
+            {/* Left Content */}
             <div className="space-y-8 animate-fade-in">
               <div className="space-y-6">
                 <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
@@ -78,7 +73,7 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Enhanced Right Visualization */}
+            {/* Right Visualization */}
             <div className="relative h-96 lg:h-[500px] animate-slide-in-right">
               <TechVisualization />
               
@@ -118,12 +113,12 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Enhanced Featured Work Preview */}
+      {/* Featured Work Preview */}
       <section className="py-20 bg-gradient-to-br from-muted/20 via-background to-muted/10 relative">
-        {/* Background decorations */}
+        {/* Static background decorations */}
         <div className="absolute inset-0 overflow-hidden opacity-30">
-          <div className="absolute top-10 right-10 w-20 h-20 bg-primary/10 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute bottom-20 left-10 w-16 h-16 bg-accent/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-10 right-10 w-20 h-20 bg-primary/10 rounded-full blur-2xl" />
+          <div className="absolute bottom-20 left-10 w-16 h-16 bg-accent/10 rounded-full blur-xl" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

@@ -25,11 +25,11 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-gradient-to-br from-muted/30 via-background to-muted/20 border-t overflow-hidden">
-      {/* Decorative background elements */}
+      {/* Static decorative background elements - removed animations */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-24 h-24 bg-accent/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-primary/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-24 h-24 bg-accent/10 rounded-full blur-2xl" />
+        <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-primary/5 rounded-full blur-xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
