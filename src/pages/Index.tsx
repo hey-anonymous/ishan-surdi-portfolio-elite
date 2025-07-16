@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BarChart3, Code2, TrendingUp, Database, Lightbulb, Target, Zap, Brain, Rocket } from "lucide-react";
+import { ArrowRight, BarChart3, Code2, TrendingUp, Database, Lightbulb, Target, Zap, Brain, Rocket, Star, Sparkles, Award, Users, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import TechVisualization from "@/components/TechVisualization";
 import FloatingParticles from "@/components/FloatingParticles";
@@ -10,88 +10,153 @@ import SkillCard from "@/components/SkillCard";
 export default function Index() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Enhanced Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
         <FloatingParticles />
+        
+        {/* Additional decorative elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/5 rounded-full blur-2xl animate-pulse" />
+        <div className="absolute top-40 right-20 w-32 h-32 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }} />
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
+            {/* Enhanced Left Content */}
             <div className="space-y-8 animate-fade-in">
-              <div className="space-y-4">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium animate-pulse">
-                  <Zap className="h-3 w-3 mr-2" />
-                  Available for opportunities
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 text-primary text-sm font-medium border border-primary/20 group hover:from-primary/20 hover:to-accent/20 transition-all duration-300">
+                    <Sparkles className="h-3 w-3 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+                    Available for opportunities
+                    <div className="ml-2 w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-3 w-3 text-yellow-500 fill-current animate-pulse" style={{ animationDelay: `${i * 200}ms` }} />
+                    ))}
+                  </div>
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-                  I'm{" "}
-                  <span className="text-gradient relative">
-                    Ishan Surdi
-                    <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur opacity-25 animate-pulse" />
-                  </span>
-                </h1>
-                <p className="text-xl sm:text-2xl font-medium text-muted-foreground">
-                  Tech. Data. Impact.
-                </p>
-                <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-                  An aspiring tech and finance professional crafting elegant solutions for complex systems.
-                  I bridge the gap between data insights and strategic decision-making.
-                </p>
+
+                <div className="space-y-4">
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+                    <span className="block">I'm</span>
+                    <span className="text-gradient relative block group">
+                      Ishan Surdi
+                      <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur opacity-25 animate-pulse group-hover:opacity-40 transition-opacity duration-500" />
+                      <div className="absolute top-0 right-0 -translate-y-2 translate-x-2">
+                        <Zap className="h-6 w-6 text-accent animate-bounce" style={{ animationDelay: '1s' }} />
+                      </div>
+                    </span>
+                  </h1>
+                  
+                  {/* Enhanced tagline with typing effect */}
+                  <div className="relative">
+                    <p className="text-xl sm:text-2xl font-medium text-muted-foreground">
+                      <span className="text-primary">Tech.</span>{" "}
+                      <span className="text-accent">Data.</span>{" "}
+                      <span className="text-gradient">Impact.</span>
+                    </p>
+                    <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary via-accent to-primary animate-pulse" />
+                  </div>
+                  
+                  <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+                    An aspiring tech and finance professional crafting{" "}
+                    <span className="text-primary font-medium">elegant solutions</span> for{" "}
+                    <span className="text-accent font-medium">complex systems</span>.
+                    I bridge the gap between data insights and strategic decision-making.
+                  </p>
+                </div>
               </div>
 
+              {/* Enhanced Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="group relative overflow-hidden">
+                <Button asChild size="lg" className="group relative overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                   <Link to="/projects">
-                    <span className="relative z-10">View Projects</span>
+                    <span className="relative z-10 flex items-center">
+                      <Rocket className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
+                      View Projects
+                    </span>
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 relative z-10" />
                     <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="group">
+                <Button asChild variant="outline" size="lg" className="group border-2 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
                   <Link to="/contact">
+                    <Users className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
                     <span className="group-hover:text-primary transition-colors">Get In Touch</span>
                   </Link>
                 </Button>
               </div>
 
-              {/* Stats */}
+              {/* Enhanced Stats with icons */}
               <div className="flex flex-wrap gap-8 pt-8">
-                <div className="text-center group">
-                  <div className="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
-                    <AnimatedCounter end={15} suffix="+" />
+                <div className="text-center group cursor-pointer">
+                  <div className="flex items-center justify-center space-x-2 mb-2">
+                    <Code2 className="h-5 w-5 text-primary group-hover:rotate-12 transition-transform duration-300" />
+                    <div className="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+                      <AnimatedCounter end={15} suffix="+" />
+                    </div>
                   </div>
-                  <div className="text-sm text-muted-foreground">Projects</div>
+                  <div className="text-sm text-muted-foreground">Projects Completed</div>
                 </div>
-                <div className="text-center group">
-                  <div className="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
-                    <AnimatedCounter end={8} suffix="+" />
+                <div className="text-center group cursor-pointer">
+                  <div className="flex items-center justify-center space-x-2 mb-2">
+                    <Award className="h-5 w-5 text-accent group-hover:rotate-12 transition-transform duration-300" />
+                    <div className="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+                      <AnimatedCounter end={8} suffix="+" />
+                    </div>
                   </div>
                   <div className="text-sm text-muted-foreground">Certifications</div>
                 </div>
-                <div className="text-center group">
-                  <div className="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
-                    <AnimatedCounter end={3} suffix="+" />
+                <div className="text-center group cursor-pointer">
+                  <div className="flex items-center justify-center space-x-2 mb-2">
+                    <Zap className="h-5 w-5 text-yellow-500 group-hover:rotate-12 transition-transform duration-300" />
+                    <div className="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+                      <AnimatedCounter end={3} suffix="+" />
+                    </div>
                   </div>
-                  <div className="text-sm text-muted-foreground">Technologies</div>
+                  <div className="text-sm text-muted-foreground">Years Experience</div>
+                </div>
+                <div className="text-center group cursor-pointer">
+                  <div className="flex items-center justify-center space-x-2 mb-2">
+                    <Clock className="h-5 w-5 text-green-500 group-hover:rotate-12 transition-transform duration-300" />
+                    <div className="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+                      <AnimatedCounter end={24} suffix="/7" />
+                    </div>
+                  </div>
+                  <div className="text-sm text-muted-foreground">Availability</div>
                 </div>
               </div>
             </div>
 
-            {/* Right Visualization */}
+            {/* Enhanced Right Visualization */}
             <div className="relative h-96 lg:h-[500px] animate-slide-in-right">
               <TechVisualization />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="grid grid-cols-2 gap-8 animate-float">
-                  <div className="glassmorphism p-6 rounded-xl text-center space-y-2 group hover-lift">
-                    <BarChart3 className="h-8 w-8 text-primary mx-auto group-hover:scale-110 transition-transform duration-300" />
-                    <div className="text-sm font-medium">Data Analytics</div>
+                  <div className="glassmorphism p-6 rounded-xl text-center space-y-2 group hover-lift cursor-pointer border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                    <div className="relative">
+                      <BarChart3 className="h-8 w-8 text-primary mx-auto group-hover:scale-110 transition-transform duration-300" />
+                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                    </div>
+                    <div className="text-sm font-medium group-hover:text-primary transition-colors duration-300">Data Analytics</div>
+                    <div className="text-xs text-muted-foreground">Advanced Insights</div>
                   </div>
-                  <div className="glassmorphism p-6 rounded-xl text-center space-y-2 group hover-lift">
-                    <Code2 className="h-8 w-8 text-accent mx-auto group-hover:scale-110 transition-transform duration-300" />
-                    <div className="text-sm font-medium">Development</div>
+                  <div className="glassmorphism p-6 rounded-xl text-center space-y-2 group hover-lift cursor-pointer border border-accent/10 hover:border-accent/30 transition-all duration-300">
+                    <div className="relative">
+                      <Code2 className="h-8 w-8 text-accent mx-auto group-hover:scale-110 transition-transform duration-300" />
+                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-500 rounded-full animate-pulse" />
+                    </div>
+                    <div className="text-sm font-medium group-hover:text-accent transition-colors duration-300">Development</div>
+                    <div className="text-xs text-muted-foreground">Full-Stack Solutions</div>
                   </div>
-                  <div className="glassmorphism p-6 rounded-xl text-center space-y-2 col-span-2 group hover-lift">
-                    <TrendingUp className="h-8 w-8 text-primary mx-auto group-hover:scale-110 transition-transform duration-300" />
-                    <div className="text-sm font-medium">Strategic Impact</div>
+                  <div className="glassmorphism p-6 rounded-xl text-center space-y-2 col-span-2 group hover-lift cursor-pointer border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                    <div className="relative">
+                      <TrendingUp className="h-8 w-8 text-primary mx-auto group-hover:scale-110 transition-transform duration-300" />
+                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-500 rounded-full animate-pulse" />
+                    </div>
+                    <div className="text-sm font-medium group-hover:text-primary transition-colors duration-300">Strategic Impact</div>
+                    <div className="text-xs text-muted-foreground">Business Transformation</div>
                   </div>
                 </div>
               </div>
